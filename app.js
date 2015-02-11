@@ -9,3 +9,5 @@ camera.on('read', function(err, timestamp, filename){
 })
 
 camera.start()
+
+console.log('node is running, thankfully')
