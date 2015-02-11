@@ -9,6 +9,5 @@ RUN apt-get update
 # copies files from the current directory into the container, e.g. ADD <src> <dest>
 ADD . /app
 
-# tell python to execute demo.py
 CMD ["node", "app.js"]
 
