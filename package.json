@@ -1,0 +1,22 @@
+{
+  "name": "shootback-camera",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandonaaskov/shootback-camera.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandonaaskov/shootback-camera/issues"
+  },
+  "homepage": "https://github.com/brandonaaskov/shootback-camera",
+  "dependencies": {
+    "raspicam": "^0.2.13"
+  }
+}
