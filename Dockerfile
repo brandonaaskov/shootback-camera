@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:wheezy-2015-01-15
 
 RUN apt-get update
-# RUN apt-get install -y python python-dev libraspberrypi-bin python-pip
+RUN apt-get install -y libraspberrypi-bin
 
 # Install picamera python module using pip
 # RUN pip install picamera
@@ -10,4 +10,3 @@ RUN apt-get update
 ADD . /app
 
 CMD ["node", "app.js"]
-
