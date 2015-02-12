@@ -1,8 +1,10 @@
 FROM resin/rpi-raspbian
 
+# RUN executes commands inside the container
 RUN apt-get update
 RUN apt-get install -y libraspberrypi-bin
-RUN raspi-config
+RUN ["node -v"]
+RUN ["raspi-config"]
 
 # copies files from the current directory into the container, e.g. ADD <src> <dest>
 ADD . /app
