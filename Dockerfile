@@ -1,7 +1,6 @@
 FROM resin/rpi-raspbian
 
 # RUN executes commands inside the container
-RUN ["node -v"]
 RUN ["raspi-config"]
 
 # copies files from the current directory into the container, e.g. ADD <src> <dest>
