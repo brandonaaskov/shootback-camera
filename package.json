@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "preinstall": "bash deps.sh",
+    "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,8 @@
   "homepage": "https://github.com/brandonaaskov/shootback-camera",
   "dependencies": {
     "raspicam": "^0.2.13"
+  },
+  "engines": {
+    "node": "0.12.0"
   }
 }
