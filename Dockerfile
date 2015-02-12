@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian
 
 # RUN executes commands inside the container
-RUN ["raspi-config"]
+RUN raspi-config
 
 # copies files from the current directory into the container, e.g. ADD <src> <dest>
 ADD . /app
