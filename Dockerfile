@@ -1,8 +1,6 @@
 FROM resin/rpi-raspbian
 
 # RUN executes commands inside the container
-RUN apt-get update
-RUN apt-get install -y libraspberrypi-bin
 RUN ["node -v"]
 RUN ["raspi-config"]
 
