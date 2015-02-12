@@ -1,7 +1,7 @@
 var RaspiCam = require('raspicam')
 var camera = new RaspiCam({
   mode: 'photo',
-  output: './stills/'
+  output: '/data' // for persistent storage across updates
 })
 
 camera.on('read', function(err, timestamp, filename){
