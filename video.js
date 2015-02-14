@@ -1,4 +1,4 @@
-var exec = require('child_process').exec,
+var spawn = require('child_process').spawn,
     through = require('through')
 
 var getFilename = function () {
@@ -7,10 +7,6 @@ var getFilename = function () {
 
 var video = {
   start: function () {
-    var onVideoSaved = function (error, stdout, stderr) {
-      console.log('video saved')
-    }
-
     var flags = [
       '-c', // record to circular buffer
       '-k', // end buffer and save on keystroke
@@ -22,8 +18,10 @@ var video = {
       this.queue(data)
     })
 
-    var command = 'raspivid ' + flags.join(' ')
-    exec(command, onVideoSaved).pipe(checkBuffer)
+    var raspivid = spawn('raspivid', flags).pipe(checkBuffer)
+    raspivid.on('data', function () {
+      console.log('data stream', arguments)
+    })
   }
 }
 
