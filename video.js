@@ -13,12 +13,12 @@ var video = {
       '-o ' + getFilename() // output
     ]
 
-    var checkBuffer = through(function (data) {
-      console.log('checking buffer', data)
-      this.queue(data)
-    })
+    //var checkBuffer = through(function (data) {
+    //  console.log('checking buffer', data)
+    //  this.queue(data)
+    //})
 
-    var raspivid = spawn('raspivid', flags).pipe(checkBuffer)
+    var raspivid = spawn('raspivid', flags)
     raspivid.on('data', function () {
       console.log('data stream', arguments)
     })
