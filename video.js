@@ -1,26 +1,29 @@
-var RaspiCam = require('raspicam')
-var exec = require('child_process').exec
+var exec = require('child_process').exec,
+    through = require('through')
 
-//var video = new RaspiCam({
-//  mode: 'video',
-//  output: './videos/file-' + Date.now() + '.mov',
-//  c: ''
-//})
-//
-//video.on('read', function(err, timestamp, filename){
-//  console.log('video saved', filename)
-//})
-//
-//video.on('data', function(data) {
-//  console.log('video data buffer', data)
-//})
+var getFilename = function () {
+  return 'videos/file-' + Date.now() + '.h264'
+}
 
 var video = {
   start: function () {
-    var onVideoBuffer = function (error, stdout, stderr) {
-      console.log('video buffer')
+    var onVideoSaved = function (error, stdout, stderr) {
+      console.log('video saved')
     }
-    exec('raspivid -o ./videos/test.mov', onVideoBuffer)
+
+    var flags = [
+      '-c', // record to circular buffer
+      '-k', // end buffer and save on keystroke
+      '-o ' + getFilename() // output
+    ]
+
+    var checkBuffer = through(function (data) {
+      console.log('checking buffer', data)
+      this.queue(data)
+    })
+
+    var command = 'raspivid ' + flags.join(' ')
+    exec(command, onVideoSaved).pipe(checkBuffer)
   }
 }
 

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/brandonaaskov/shootback-camera",
   "dependencies": {
-    "raspicam": "^0.2.13"
+    "raspicam": "^0.2.13",
+    "through": "^2.3.6"
   }
 }
