@@ -10,7 +10,7 @@ var video = {
     var flags = [
       '-c', // record to circular buffer
       '-s', // end buffer and save on signal
-      '-o ' + getFilename() // output
+      '-o -' // buffer to stdout
     ]
 
     //var checkBuffer = through(function (data) {
@@ -25,15 +25,16 @@ var video = {
       maxBuffer: 200*1024
     }
 
-    var onVideoSaved = function () {
-      console.log('video saved', arguments)
+    var onVideoSaved = function (error, stdout, stderr) {
+      console.log('video saved', stdout)
     }
 
     var raspivid = exec(command, options, onVideoSaved)
+
     setTimeout(function () {
       console.log('sending signal', raspivid.pid)
       raspivid.kill()
-    }, 5000)
+    }, 2000)
   }
 }
 
