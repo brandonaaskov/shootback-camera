@@ -30,6 +30,9 @@ var video = {
     }
 
     var raspivid = exec(command, options, onVideoSaved)
+    raspivid.stdout.on('data', function (data) {
+      console.log('data?', data)
+    })
 
     setTimeout(function () {
       console.log('sending signal', raspivid.pid)
