@@ -21,7 +21,6 @@ var video = {
 
     var command = 'raspivid ' + flags.join(' ')
     var options = {
-      killSignal: 'SIGUSR1',
       maxBuffer: 200*1024,
       callback: function () {
         console.log('exec process terminated')
@@ -30,9 +29,9 @@ var video = {
 
     var raspivid = exec(command, options)
     setTimeout(function () {
-      console.log('sending signal', raspivid)
-      raspivid.kill()
-    }, 5000)
+      console.log('sending signal', raspivid.pid)
+      raspivid.kill('SIGUSR1')
+    }, 3000)
   }
 }
 
