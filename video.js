@@ -9,7 +9,6 @@ var video = {
   start: function () {
     var flags = [
       '-c', // record to circular buffer
-      //'-k', // end buffer and save on keystroke
       '-s', // end buffer and save on signal
       '-o ' + getFilename() // output
     ]
@@ -20,9 +19,10 @@ var video = {
     //})
 
     var command = 'raspivid ' + flags.join(' ')
+    console.log('command', command)
     var options = {
       killSignal: 'SIGUSR1',
-      maxBuffer: 200*1024,
+      maxBuffer: 200*1024
     }
 
     var onVideoSaved = function () {
