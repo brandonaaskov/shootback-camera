@@ -21,7 +21,8 @@ var video = {
 
     var raspivid = spawn('raspivid', flags)
     setTimeout(function () {
-      raspivid.kill(raspivid.pid)
+      console.log('sending signal')
+      raspivid.send('SIGUSR1')
     }, 5000)
   }
 }
