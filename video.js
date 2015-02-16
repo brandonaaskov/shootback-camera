@@ -9,7 +9,8 @@ var video = {
   start: function () {
     var flags = [
       '-c', // record to circular buffer
-      '-k', // end buffer and save on keystroke
+      //'-k', // end buffer and save on keystroke
+      '-s', // end buffer and save on signal
       '-o ' + getFilename() // output
     ]
 
@@ -19,9 +20,9 @@ var video = {
     //})
 
     var raspivid = spawn('raspivid', flags)
-    raspivid.on('data', function () {
-      console.log('data stream', arguments)
-    })
+    setTimeout(function () {
+      raspivid.kill(raspivid.pid)
+    }, 5000)
   }
 }
 
