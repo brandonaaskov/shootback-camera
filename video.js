@@ -1,4 +1,4 @@
-var spawn = require('child_process').spawn,
+var exec = require('child_process').exec,
     through = require('through')
 
 var getFilename = function () {
@@ -19,10 +19,19 @@ var video = {
     //  this.queue(data)
     //})
 
-    var raspivid = spawn('raspivid', flags)
+    var command = 'raspivid ' + flags.join(' ')
+    var options = {
+      killSignal: 'SIGUSR1',
+      maxBuffer: 200*1024,
+      callback: function () {
+        console.log('exec process terminated')
+      }
+    }
+
+    var raspivid = exec(command, options)
     setTimeout(function () {
-      console.log('sending signal')
-      raspivid.send('SIGUSR1')
+      console.log('sending signal', raspivid)
+      raspivid.kill()
     }, 5000)
   }
 }
