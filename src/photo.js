@@ -4,7 +4,11 @@ var photo = new RaspiCam({
   output: './stills/file-' + Date.now() + '.jpg'
 })
 
-photo.on('read', function(err, timestamp, filename){
+photo.on('read', function (err, timestamp, filename) {
+  if (err) {
+    console.error(err)
+  }
+
   console.log('picture taken/saved', filename)
 })
 

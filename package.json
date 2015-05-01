@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "raspicam": "^0.2.13",
     "through": "^2.3.6"
+  },
+  "devDependencies": {
+    "standard": "^3.7.2"
   }
 }

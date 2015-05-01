@@ -1,9 +1,8 @@
-var exec = require('child_process').exec,
-    through = require('through')
+var exec = require('child_process').exec
 
-var getFilename = function () {
-  return 'videos/file-' + Date.now() + '.h264'
-}
+// var getFilename = function () {
+//   return 'videos/file-' + Date.now() + '.h264'
+// }
 
 var video = {
   start: function () {
@@ -13,19 +12,23 @@ var video = {
       '-o -' // buffer to stdout
     ]
 
-    //var checkBuffer = through(function (data) {
-    //  console.log('checking buffer', data)
-    //  this.queue(data)
-    //})
+    // var checkBuffer = through(function (data) {
+    //   console.log('checking buffer', data)
+    //   this.queue(data)
+    // })
 
     var command = 'raspivid ' + flags.join(' ')
     console.log('command', command)
     var options = {
       killSignal: 'SIGUSR1',
-      maxBuffer: 200*1024
+      maxBuffer: 200 * 1024
     }
 
     var onVideoSaved = function (error, stdout, stderr) {
+      if (error) {
+        console.error(error)
+      }
+
       console.log('video saved', stdout)
     }
 
