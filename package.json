@@ -1,0 +1,10 @@
+{
+  "name": "shootback-camera",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "repository": "git@github.com:brandonaaskov/shootback-camera.git",
+  "author": "brandonaaskov",
+  "dependencies": {
+    "pi-camera-connect": "^0.3.4"
+  }
+}
