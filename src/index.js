@@ -5,8 +5,8 @@ const ffmpeg = require('fluent-ffmpeg')
 
 const streamCamera = new StreamCamera({ codec: Codec.H264 })
 
-const path = path.resolve(__dirname, '..')
-const filename = path.resolve(`${path}/capture-${Date.now()}`)
+const filepath = path.resolve(__dirname, '..')
+const filename = path.resolve(`${filepath}/recordings/capture-${Date.now()}`)
 
 console.log(filename)
 
