@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "fluent-ffmpeg": "^2.1.2",
+    "node-audiorecorder": "^2.2.0",
     "pi-camera-connect": "^0.3.4"
   }
 }

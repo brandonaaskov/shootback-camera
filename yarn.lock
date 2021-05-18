@@ -20,6 +20,11 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
 
+node-audiorecorder@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/node-audiorecorder/-/node-audiorecorder-2.2.0.tgz#6d7f2651fe6d54ea1b6515df16ba0e7fa9996438"
+  integrity sha512-JyBqAZ2b/N+yJFuR/bY0WqVw7wTi4AoarOll16oKqAw5Ma8ooV0+NZn3M9dHbeSkPxBU4H/wy5ZMLLkgDSNq4g==
+
 pi-camera-connect@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/pi-camera-connect/-/pi-camera-connect-0.3.4.tgz#a7d5e993997f3b63e9f36b25870a6239c63f358a"
