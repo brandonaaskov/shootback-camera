@@ -8,6 +8,48 @@ This project was conceived in 2014 following the Michael Brown shooting. The obs
 
 Inspired by the YakBak toy from the 1990s, the core concept is a continuous ring buffer that can be "saved" at any moment, preserving the preceding minutes of footage.
 
+## Project History
+
+The original Shootback Camera project was created on **September 5, 2014** and published on Hackaday.io.
+
+**Original project description:**
+> "A worn camera (based on the Pi) that captures the last 30s (or more?) that just happened, directly to the card. Don't miss a moment."
+
+**From the original details page:**
+> "Have you ever seen something happen where you wished you had a camera rolling? There are many events that occur where cameras are turned on, *just* after the important moment. The Mike Brown shooting is a prime example of this, and what inspired this project to be completely open. If someone wants to take the concept private, by all means. In fact, I hope dearly that GoPro just enables this as a feature on its fleet of cameras. It could probably do so with a straightforward firmware upgrade."
+
+### Original 2014 Components
+- Raspberry Pi Model B(+)
+- Momentary Push Button
+- Raspberry Pi Camera Module
+- Ninja Pibow Case
+
+### Original Concepts (2014)
+- Use the Raspberry Pi Compute Module for a smaller form factor
+- Potential Kickstarter for manufacturing
+- Earth magnets on the case for quick mounting
+- RF keyfob to trigger multiple mounted cameras simultaneously (predating the current ESP32/iBeacon concept)
+- Used the PiCamera Python library for circular buffer recording
+
+### Project Logs
+- **October 2, 2014:** GitHub repository created at https://github.com/brandonaaskov/shootback-camera
+- **October 17, 2014:** Final log entry discussing finding time for the project
+
+### Links
+- Original Hackaday.io project: https://hackaday.io/project/2961-shootback-camera
+- Original GitHub repo: https://github.com/brandonaaskov/shootback-camera
+
+---
+
+## 2025 Revival
+
+After 10+ years, the project is being revisited with significantly improved hardware options:
+- Pi Zero 2 W (vs original Pi Model B) - dramatically smaller and more powerful
+- Voice Bonnet for audio capture (original concept had no audio solution)
+- Mature software tooling (FFmpeg segment muxer, picamera2, libcamera)
+- 3D printing accessibility for custom enclosures
+- Ubiquitous smartphone hotspots for cloud upload
+
 ## Core Requirements
 
 - No soldering required for assembly
@@ -116,7 +158,7 @@ Connect ribbon cable to CSI port on Pi Zero 2 W (located between HDMI port and b
 
 ### Estimated Dimensions
 - **Length:** ~140mm
-- **Width:** ~40mm  
+- **Width:** ~40mm
 - **Thickness:** ~35mm
 
 Comparable to a TV remote or thick smartphone in a rugged case.
@@ -159,4 +201,4 @@ This project is intended to be open source. Community contributions welcome, esp
 
 ---
 
-*Conceived 2014. Prototype documented January 2026.*
+*Originally conceived September 2014. Hackaday.io project published September 5, 2014. Prototype revival documented January 2026.*
